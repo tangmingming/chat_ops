@@ -1,0 +1,39 @@
+<template>
+<div id="app">
+  <h1>Hello App!</h1>
+  <el-button v-on:click="add_income">增加收入</el-button>
+  <view-one v-bind:persons="person_infos"></view-one>
+  <view-two v-bind:persons="person_infos"></view-two>
+</div>
+</template>
+
+<script>
+  import view_one from "./components/view_one.vue"
+  import view_two from "./components/view_two.vue"
+  import ElButton from "../node_modules/element-ui/packages/button/src/button.vue";
+
+  import {store} from "./store/store"
+
+    export default{
+        name: 'APP',
+        components:{
+            ElButton,
+            "view-one": view_one,
+            "view-two": view_two
+        },
+        data: function () {
+            return {
+                person_infos:[
+                    {"name": "yun.ma", "income": 100},
+                    {"name": "huateng.ma", "income": 90},
+                ]
+            }
+        },
+        methods:{
+            add_income: function () {
+                this.person_infos[0].income += 10
+                this.$store.state.person_infos[0].income += 20
+            }
+        }
+    }
+</script>
