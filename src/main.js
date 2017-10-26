@@ -8,12 +8,16 @@ import {store} from "./store/store"
 
 import echarts from 'echarts'
 
+import cytoscape from "cytoscape"
+
+
 Vue.prototype.$echarts = echarts
+Vue.prototype.$cytoscape = cytoscape
 
 Vue.use(ElementUI)
 
 new Vue({
-    store:store,
+    store,
   router,
   el: '#app',
   render: h => h(App)

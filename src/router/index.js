@@ -14,6 +14,9 @@ import readme from "../components/index_pages/readme.vue"
 import chart_1 from "../components/index_pages/chart_1.vue"
 import chart_2 from "../components/index_pages/chart_2.vue"
 
+import january from "../components/cytoscape/january.vue"
+import february from "../components/cytoscape/february.vue"
+
 Vue.use(Router)
 
 export default new Router({
@@ -53,8 +56,20 @@ export default new Router({
                   component: readme
               },
               {
+                path: "chart_1",
+                  component: chart_1
+              },
+              {
                 path: "chart_2",
                   component: chart_2
+              },
+              {
+                path: "january",
+                  component: january
+              },
+              {
+                path: "february",
+                  component: january
               }
 
           ]
